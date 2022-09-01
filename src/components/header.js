@@ -21,12 +21,12 @@ export default class Header extends React.Component {
     const { user, menssage } = this.state;
     return (
       <header data-testid="header-component">
+        <h1>Header</h1>
         <nav>
           <Link to="/search" data-testid="link-to-search">Search</Link>
           <Link to="/favorites" data-testid="link-to-favorites">Favoritas</Link>
           <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
         </nav>
-        <h1>Header</h1>
         { menssage ? <Loading /> : <p data-testid="header-user-name">{ user }</p> }
       </header>
     );
