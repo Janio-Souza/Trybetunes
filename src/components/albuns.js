@@ -9,12 +9,12 @@ export default class Albuns extends React.Component {
       <div>
         <ul>
           <li>
+            <img src={ albuns.artworkUrl100 } alt="album" />
             { albuns.artistId }
             { albuns.artistName }
             { albuns.collectionId }
             { albuns.collectionName }
             { albuns.collectionPrice }
-            { albuns.artworkUrl100 }
             { albuns.releaseDate }
             { albuns.trackCount }
             <Link
