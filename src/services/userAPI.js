@@ -35,7 +35,6 @@ export const createUser = (user) => new Promise((resolve) => {
   };
   saveUser({ ...emptyUser, ...user });
   simulateRequest(SUCCESS_STATUS)(resolve);
-  console.log(emptyUser, user);
 });
 
 export const updateUser = (updatedUser) => new Promise((resolve) => {

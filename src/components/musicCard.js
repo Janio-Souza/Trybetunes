@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../pages/loading';
 
 export default class MusicCard extends React.Component {
@@ -22,8 +22,11 @@ export default class MusicCard extends React.Component {
       this.setState(
         (prev) => ({ favorites: [...prev.favorites, Number(checkboxs.target.id)] }),
       );
+      console.log('allMusics', allMusics); // Console.log
       await addSong(allMusics); // Passabdo a musica favoritada para a função addSong.
+      const musicsFavorites = await getFavoriteSongs(); // Recupera as musicas favritadas pela função addSong.
       this.setState({ menssage: false });
+      console.log('Musicas favoritas', musicsFavorites);// Console.log
     } else {
       this.setState(
         (prev) => ({ favorites: prev.favorites
