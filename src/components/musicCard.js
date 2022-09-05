@@ -1,42 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/loading';
 
 export default class MusicCard extends React.Component {
   state = {
     allMusics: [],
     menssage: false,
-    favorites: [],
+    favoritesMusics: [],
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { musics } = this.props;
-    this.setState({ allMusics: musics });
+    const GET_MUSICS = await getFavoriteSongs();
+    this.setState({ allMusics: musics, favoritesMusics: GET_MUSICS });
   }
 
   favorite = async (checkboxs) => {
     const { allMusics } = this.state;
+    this.setState({ menssage: true });
     if (checkboxs.target.checked === true) {
-      this.setState({ menssage: true });
-      this.setState(
-        (prev) => ({ favorites: [...prev.favorites, Number(checkboxs.target.id)] }),
-      );
-      console.log('allMusics', allMusics); // Console.log
-      await addSong(allMusics); // Passabdo a musica favoritada para a função addSong.
-      const musicsFavorites = await getFavoriteSongs(); // Recupera as musicas favritadas pela função addSong.
-      this.setState({ menssage: false });
-      console.log('Musicas favoritas', musicsFavorites);// Console.log
+      await addSong(allMusics); // Passando a musica favoritada para a função addSong.
+      const favoritesNewMusics = await getFavoriteSongs(); // Recupera as musicas favritadas pela função addSong.
+      this.setState({ menssage: false, favoritesMusics: favoritesNewMusics });
     } else {
-      this.setState(
-        (prev) => ({ favorites: prev.favorites
-          .filter((element) => element !== Number(checkboxs.target.id)) }),
-      );
+      await removeSong(allMusics); // Removendo musica do localStorage.
+      const favoritesMusics = await getFavoriteSongs();
+      this.setState({ menssage: false, favoritesMusics });
     }
   };
 
   render() {
-    const { allMusics, menssage, favorites } = this.state;
+    const { allMusics, menssage, favoritesMusics } = this.state;
     return (
       <div>
         {
@@ -62,11 +57,12 @@ export default class MusicCard extends React.Component {
                   htmlFor={ allMusics.trackId }
                   data-testid={ `checkbox-music-${allMusics.trackId}` }
                 >
-                  Favoritar
+                  Favorita
                   <input
                     type="checkbox"
                     id={ allMusics.trackId }
-                    checked={ favorites.includes(allMusics.trackId) }
+                    checked={ favoritesMusics
+                      .some((element) => element.trackId === allMusics.trackId) }
                     onChange={ this.favorite }
                   />
                 </label>
