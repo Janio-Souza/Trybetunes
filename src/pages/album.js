@@ -25,7 +25,6 @@ export default class Album extends React.Component {
 
   render() {
     const { musics, artistName, collectionName } = this.state;
-    console.log('log musics em album', musics);
     return (
       <div data-testid="page-album">
         <Header />
