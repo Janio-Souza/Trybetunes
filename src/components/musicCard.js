@@ -18,7 +18,6 @@ export default class MusicCard extends React.Component {
   favorite = async (checkboxs) => {
     const { allMusics } = this.state;
     if (checkboxs.target.checked === true) {
-      console.log(checkboxs.target.id);
       this.setState({ menssage: true });
       this.setState(
         (prev) => ({ favorites: [...prev.favorites, Number(checkboxs.target.id)] }),
@@ -26,7 +25,10 @@ export default class MusicCard extends React.Component {
       await addSong(allMusics); // Passabdo a musica favoritada para a função addSong.
       this.setState({ menssage: false });
     } else {
-      console.log('Desmarcou');
+      this.setState(
+        (prev) => ({ favorites: prev.favorites
+          .filter((element) => element !== Number(checkboxs.target.id)) }),
+      );
     }
   };
 
