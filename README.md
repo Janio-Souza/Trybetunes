@@ -45,9 +45,11 @@ Clone o repositório em sua maquina e siga os passos.
   $ npm install
 
 3. Rodar a aplicação com o comando:
+
   $ npm run start
 
 4. Acessar atravésdo navegador:
+
   <p>http://localhost:3000/</p>
 
 ## Contribuintes
