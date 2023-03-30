@@ -38,19 +38,19 @@ Clone o repositório em sua maquina e siga os passos.
 
 1. Entrar no diretório app:
 
-  $ cd trybetunes
+    $ cd trybetunes
 
 2. Instalar dependencias:
   
-  $ npm install
+    $ npm install
 
 3. Rodar a aplicação com o comando:
 
-  $ npm run start
+    $ npm run start
 
 4. Acessar atravésdo navegador:
 
-  <p>http://localhost:3000/</p>
+    <p>http://localhost:3000/</p>
 
 ## Contribuintes
 |Nome|GitHub|
