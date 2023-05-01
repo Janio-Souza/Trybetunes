@@ -6,7 +6,8 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <p>TrybeTunes</p>
+        {/* <p>MusicTunes</p> */}
+        {/* <img src="MusicLogo.png" alt="logo" height="40px" /> */}
         <Pages />
       </BrowserRouter>
     );
