@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/loading';
+import '../app.css';
 
 export default class MusicCard extends React.Component {
   state = {
@@ -66,7 +67,8 @@ export default class MusicCard extends React.Component {
                     onChange={ this.favorite }
                   />
                 </label>
-              </div>)
+              </div>
+            )
         }
       </div>
     );

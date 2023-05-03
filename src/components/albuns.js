@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../app.css';
 
 export default class Albuns extends React.Component {
   render() {
     const { albuns } = this.props;
     return (
-      <div>
+      <div className="albuns">
         <ul>
-          <li>
-            <img src={ albuns.artworkUrl100 } alt="album" />
-            { albuns.artistId }
+          <li className="albunDetails">
             { albuns.artistName }
-            { albuns.collectionId }
+            <img src={ albuns.artworkUrl100 } alt="album" width="140px" />
+            {/* { albuns.artistId } */}
+            {/* { albuns.collectionId } */}
             { albuns.collectionName }
-            { albuns.collectionPrice }
-            { albuns.releaseDate }
-            { albuns.trackCount }
+            { ` R$ ${albuns.collectionPrice.toFixed(2)} ` }
+            {/* { albuns.releaseDate } */}
+            {/* { albuns.trackCount } */}
             <Link
               to={ `/album/${albuns.collectionId}` }
               data-testid={ `link-to-album-${albuns.collectionId}` }

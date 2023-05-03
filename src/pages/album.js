@@ -34,7 +34,7 @@ export default class Album extends React.Component {
         <h3 data-testid="artist-name">
           { artistName }
         </h3>
-        { musics.map((elements, indice) => {
+        {musics.map((elements, indice) => {
           if (indice !== 0) {
             return <MusicCard key={ elements.trackName } musics={ elements } />;
           }

@@ -4,6 +4,7 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './loading';
 import Albuns from '../components/albuns';
 import Artist from '../components/artist';
+import '../app.css';
 
 export default class Search extends React.Component {
   state = {
@@ -45,7 +46,7 @@ export default class Search extends React.Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <form>
+        <form className="centerTela">
           <label htmlFor="search">
             <input
               type="text"
@@ -65,12 +66,15 @@ export default class Search extends React.Component {
             </button>
           </label>
         </form>
-        { menssage ? <Loading /> : null }
+        { menssage ? <div className="centerTela"><Loading /></div> : null }
         { displayName && <Artist artistName={ artistName } /> }
-        { albuns.length !== 0
-          ? albuns
-            .map((element) => <Albuns key={ element.collectionId } albuns={ element } />)
-          : <p>Nenhum álbum foi encontrado</p> }
+        <div className="albunBox">
+          { albuns.length !== 0
+            ? albuns
+              .map((element) => (
+                <Albuns key={ element.collectionId } albuns={ element } />))
+            : <p className="centerTela">Nenhum álbum foi encontrado</p> }
+        </div>
       </div>
     );
   }
