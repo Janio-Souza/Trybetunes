@@ -1,0 +1,79 @@
+#userName {
+  margin-right: 10px;
+}
+
+.reader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fe9600;
+  height: 45px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.linksNavBar {
+  /* background-color: #f44336; */
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.linksNavBarHover {
+  background-color: #fe9600;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.centerTela {
+  display: flex;
+  justify-content: center;
+}
+
+.albunDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.albuns {
+  box-shadow: 2px 2px 4px black;
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
+}
+
+.albunBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.musicCard {
+  align-items: center;
+  box-shadow: 2px 2px 4px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+  width: 690px;
+}

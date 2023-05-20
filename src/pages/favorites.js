@@ -23,16 +23,18 @@ export default class Favorites extends React.Component {
   render() {
     const { menssage, musicsFavorites } = this.state;
     return (
-      <div data-testid="page-favorites">
-        { menssage ? <Loading />
-          : (
-            <div>
-              <Header />
-              <h2>Musicas Favoritas</h2>
-              { musicsFavorites
-                .map((elements) => (
-                  <MusicCard key={ elements.trackName } musics={ elements } />)) }
-            </div>)}
+      <div>
+        <Header />
+        <h2 className="container">Musicas Favoritas</h2>
+        <div className="container">
+          { menssage ? <Loading />
+            : (
+              <div>
+                { musicsFavorites
+                  .map((elements) => (
+                    <MusicCard key={ elements.trackName } musics={ elements } />)) }
+              </div>)}
+        </div>
       </div>
     );
   }

@@ -5,7 +5,7 @@ export default class Artist extends React.Component {
   render() {
     const { artistName } = this.props;
     return (
-      <p>
+      <p className="centerTela">
         Resultado de álbuns de:
         { ` ${artistName}` }
       </p>
