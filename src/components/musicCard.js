@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/loading';
 import '../app.css';
+// import * as Mui from '@mui/material';
 
 export default class MusicCard extends React.Component {
   state = {
@@ -39,7 +41,8 @@ export default class MusicCard extends React.Component {
           menssage
             ? <Loading />
             : (
-              <div>
+              <div className="musicCard">
+                <img src={ allMusics.artworkUrl100 } alt="album" width="90px" />
                 <p>
                   { allMusics.trackName }
                 </p>
@@ -58,7 +61,7 @@ export default class MusicCard extends React.Component {
                   htmlFor={ allMusics.trackId }
                   data-testid={ `checkbox-music-${allMusics.trackId}` }
                 >
-                  Favorita
+                  Favoritar
                   <input
                     type="checkbox"
                     id={ allMusics.trackId }

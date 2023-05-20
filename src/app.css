@@ -60,3 +60,20 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.musicCard {
+  align-items: center;
+  box-shadow: 2px 2px 4px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+  width: 690px;
+}

@@ -26,20 +26,24 @@ export default class Album extends React.Component {
   render() {
     const { musics, artistName, collectionName } = this.state;
     return (
-      <div data-testid="page-album">
+      <div>
         <Header />
-        <h3 data-testid="album-name">
-          { collectionName }
-        </h3>
-        <h3 data-testid="artist-name">
-          { artistName }
-        </h3>
-        {musics.map((elements, indice) => {
-          if (indice !== 0) {
-            return <MusicCard key={ elements.trackName } musics={ elements } />;
-          }
-          return true;
-        })}
+        <div className="albunBox">
+          <h3 data-testid="album-name">
+            { collectionName }
+          </h3>
+          <h3 data-testid="artist-name">
+            { artistName }
+          </h3>
+        </div>
+        <div className="albunBox">
+          {musics.map((elements, indice) => {
+            if (indice !== 0) {
+              return <MusicCard key={ elements.trackName } musics={ elements } />;
+            }
+            return true;
+          })}
+        </div>
       </div>
     );
   }
