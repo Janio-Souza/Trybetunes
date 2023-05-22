@@ -23,13 +23,12 @@ export default class Profile extends React.Component {
         <Header />
         { menssage ? <Loading />
           : (
-            <div>
+            <div className="profileContainer">
               <img
                 src={ userProfile.image }
                 alt="User"
-                width="300"
-                height="300"
-                data-testid="profile-image"
+                width="200"
+                height="200"
               />
               <h3>Nome</h3>
               { userProfile.name }

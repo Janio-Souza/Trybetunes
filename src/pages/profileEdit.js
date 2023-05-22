@@ -60,12 +60,12 @@ export default class editeName extends React.Component {
   render() {
     const { menssage, btn, name, image, email, description, redirect } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div>
         { menssage
           ? <Loading /> : (
             <div>
               <Header />
-              <form>
+              <form className="edit">
                 <label
                   htmlFor="image"
                 >
