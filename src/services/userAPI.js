@@ -30,7 +30,7 @@ export const createUser = (user) => new Promise((resolve) => {
   const emptyUser = {
     name: '',
     email: '',
-    image: '',
+    image: 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png',
     description: '',
   };
   saveUser({ ...emptyUser, ...user });
