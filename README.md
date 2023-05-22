@@ -32,6 +32,8 @@ Aplicação em funcionamento.
 
 
 ## Acesso à Aplicação
+Acesse online e veja em funcionamento em:
+https://trybetunes-ashy-xi.vercel.app/
 ### Instalação e Execução
 
 Clone o repositório em sua maquina e siga os passos.
