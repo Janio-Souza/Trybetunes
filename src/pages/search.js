@@ -54,7 +54,7 @@ export default class Search extends React.Component {
               data-testid="search-artist-input"
               value={ searchAlbuns }
               onChange={ this.search_Input }
-              placeholder="Pesquisar Artista"
+              placeholder="Pesquisar Artista Ex: Joao"
             />
             <button
               type="button"
